@@ -8,9 +8,19 @@
 
 puts "🌱 Seeding data..."
 
-10.times do 
-    User.create(username: Faker::Name.name ,email: Faker::Internet.email , password_digest: Faker::DcComics.villain)
-end
+# 10.times do 
+#     User.create(username: Faker::Name.name ,email: Faker::Internet.email , password_digest: Faker::DcComics.villain)
+# end
+
+
+# reviews = Review.create([
+#     {title: "The best piece of literature"},
+#     {description: "The book presents a smooth chronological flow of events from the start till end "},
+#     {rating: 8},
+#     {user_id: 1},
+#     {book_id: 2}
+# ])
+
 
 
 
