@@ -5,7 +5,6 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :coverpage
       t.text :description
       t.string :bookurl
-      # t.references :genre_id, null: false, foreign_key: true
 
       t.timestamps
     end
