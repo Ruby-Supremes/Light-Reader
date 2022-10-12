@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import Reviews from "./Reviews";
+// import { Link } from "react-router-dom"
 
 function BookProfile() {
   return (
@@ -22,7 +23,8 @@ function BookProfile() {
               </div>
             </div>
             <div className="py-4">
-            <h5>Book Reviews</h5>
+            {/* <h5>Book Reviews</h5> */}
+            <Reviews />
             </div>
           </div>
         </div>
