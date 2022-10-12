@@ -27,23 +27,25 @@ function Reviews() {
         </Form>
       </div>
       {/* Book  Reviews Section */}
-      <div className="row row-cols-1 row-cols-md-4 py-3">
-      <div className="py-4">
-        <h4>Book Reviews</h4>
-        <div className="card mb- h-100 shadow" >
-          <div className="row g-1">
-            <div className="col-md-8 h-100 shadow">
-              <div className="card-body">
+      <div className="container">
+      <h4 className="py-3">Book Reviews</h4>
+      <div className="row row-cols-1 row-cols-md-4 py-4">
+      <div>
+        <div className="card py-3">
+          <div className="col mb-4">
+            <div>
+              <div>
                 <h6 className="card-title">Review title</h6>
                 <p className="card-title">Description</p>
                 <p className="card-text">Rating</p>
             </div>
-            <Button style={{marginRight: 10}} variant="primary" type="submit">Edit</Button>
+            <Button style={{margin: 5}} variant="primary" type="submit">Edit</Button>
             <Button variant="danger" type="submit">Delete</Button>
             </div>
           </div>
         </div>
         </div>
+      </div>
       </div>
     </div>
   );
