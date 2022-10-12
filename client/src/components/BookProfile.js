@@ -22,13 +22,10 @@ function BookProfile() {
                 {/* <Link to={`/books/`} className="btn btn-dark text-center">Read full Book</Link> */}
               </div>
             </div>
-            <div className="py-4">
-            {/* <h5>Book Reviews</h5> */}
-            <Reviews />
-            </div>
           </div>
         </div>
       </div>
+      <Reviews />
     </center>
   );
 }
