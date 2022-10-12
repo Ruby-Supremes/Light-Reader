@@ -69,7 +69,7 @@ function Reviews() {
 //   };
 
   return (
-    <div>
+    <div className="py-3">
       <h4> Give Review</h4>
       <div style={{width: 500}}>
         <Form>
@@ -94,32 +94,75 @@ function Reviews() {
           </div>
         </Form>
       </div>
-      {/* Book  Reviews Section */}
-      <div className="container">
-      <h4 className="py-3">Available Reviews</h4>
-      <div className="row row-cols-1 row-cols-md-4 py-4">
-      <div>
-        <div className="card py-3">
-          <div className="col mb-4">
-            <div>
-              <div>
-                <h6 className="card-title">Review title</h6>
-                <p className="card-title">Description</p>
+       {/* Book  Reviews Section */}
+  
+          <div className="container py-5">
+            <center>  
+              <h4> Available Book Reviews </h4>
+             <div className="row row-cols-1 row-cols-md-4 py-3">
+            {/* {((dev, index)=> (   */}
+            {/* key={}  */}
+            <div   className="col mb-4">
+            <div className="card text-center h-100 shadow">  
+              <img src=".." className="card-img-top" alt=""/>
+              <div className="card-body ">
+                <h6 className="card-title">Title</h6>
+                <p className="card-text"> Description</p>
                 <p className="card-text">Rating</p>
-            </div>
-            <Button style={{margin: 5}} variant="primary" type="submit">Edit</Button>
-            <Button variant="danger" type="submit">Delete</Button>
-            </div>
-          </div>
+              </div>
+            </div> 
+          </div> 
+          {/* ))} */}
         </div>
-        </div>
-      </div>
+        </center> 
       </div>
     </div>
   );
 }
 
+
 export default Reviews;
 
 // value={title}
 //             onChange={(e) => setTitle(e.target.value)}
+
+// <div className="container py-5">
+  //  <center>  
+  //   <h3>View Available Developers Here</h3>
+  //   <div className="row row-cols-1 row-cols-md-4 py-3">
+  //   {data.map((dev, index)=> (  
+  //     <div key={index} className="col mb-4">
+  //       <div className="card text-center h-100 shadow">  
+  //         <img src={dev.image_url} className="card-img-top" alt=""/>
+  //         <div className="card-body ">
+  //           <h5 className="card-title">{dev.first_name}</h5>
+  //           <p className="card-text"> {dev.developer.category}</p>
+  //           <p className="card-text">Experience: {dev.experience} yrs</p>
+  //         </div>
+  //       </div> 
+  //     </div> ))}
+  //   </div>
+  //   </center> 
+  // </div>
+
+
+  // <div className="container">
+  //     <h4 className="py-3">Available Reviews</h4>
+  //     <div className="row row-cols-1 row-cols-md-4 py-4">
+  //     <div>
+  //       <div className="card py-3">
+  //         <div className="col mb-4">
+  //           <div>
+  //             <div>
+  //               <h6 className="card-title">Review title</h6>
+  //               <p className="card-title">Description</p>
+  //               <p className="card-text">Rating</p>
+  //           </div>
+  //           <Button style={{margin: 5, height: 35}} variant="warning" type="submit">Edit</Button>
+  //           <Button style={{ height: 35}} variant="danger" type="submit">Delete</Button>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       </div>
+  //      </div>
+  //      </div>

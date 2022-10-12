@@ -1,4 +1,7 @@
+import React from "react";
 import Reviews from "./Reviews";
+import {Link} from 'react-router-dom'
+// import { BrowserRouter as NavLink } from 'react-router-dom'
 // import { useLocation } from "react-router-dom";
 // import Button from "react-bootstrap/Button";
 
@@ -13,7 +16,6 @@ function BookProfile() {
     <center>
       <div className="container py-5">
         <h2>Book Details</h2>
-
         <div className="card mb- h-100 shadow">
           <div className="row g-1">
             <div className="col-md-4">
@@ -25,14 +27,16 @@ function BookProfile() {
                 <h5 className="card-title">Author</h5>
                 <h5 className="card-title">Genre</h5>
                 <p className="card-text">Description</p>
-                {/* <a href={`/books/${book.bookurl}`}>Read full Book</a> */}
-                {/* <Link to="/about"> <Button variant="outline-light" size="lg"> Read full book</Button></Link> */}
+                <Link to={`/books/`} state={{}} className="btn btn-info text-center">Read full Book</Link>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
-      <Reviews />
+      <button className="btn btn-success text-center">View or Add Review</button> 
+     <Reviews />
+      
     </center>
   );
 }
