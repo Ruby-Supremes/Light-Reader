@@ -1,25 +1,31 @@
-import React from "react";
 import Reviews from "./Reviews";
-// import { Link } from "react-router-dom"
+// import { useLocation } from "react-router-dom";
+// import Button from "react-bootstrap/Button";
 
 function BookProfile() {
+
+    // const {state} = useLocation()
+    // const {book} = state
+  
+   
+
   return (
     <center>
       <div className="container py-5">
-        <h2>Book Profile</h2>
+        <h2>Book Details</h2>
 
-        <div className="card mb- h-100 shadow" >
+        <div className="card mb- h-100 shadow">
           <div className="row g-1">
             <div className="col-md-4">
-              <img src="..." className="img-fluid rounded-start" alt="..." />
+              <img src="" className="img-fluid rounded-start" alt="..." />
             </div>
             <div className="col-md-8 h-100 shadow">
               <div className="card-body">
-                <h4 className="card-title">Book title</h4>
+                <h4 className="card-title">Title</h4>
                 <h5 className="card-title">Author</h5>
                 <h5 className="card-title">Genre</h5>
                 <p className="card-text">Description</p>
-                {/* <Link to={`/books/`} className="btn btn-dark text-center">Read full Book</Link> */}
+                {/* <Link to="/about"> <Button variant="outline-light" size="lg"> Read full book</Button></Link> */}
               </div>
             </div>
           </div>
@@ -32,5 +38,10 @@ function BookProfile() {
 
 export default BookProfile;
 
-// ${dev.id}
-// state={{dev}}
+// ${book.id}
+// state={{book}}
+// :title, :coverpage, :description, :bookurl)
+
+// {book.coverpage}
+// {book.title}
+// {book.description}
