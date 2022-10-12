@@ -5,7 +5,8 @@ import Form from "react-bootstrap/Form";
 // import { useLocation } from "react-router-dom";
 
 
-function Reviews() {
+
+function Reviews() { 
 
 //     const url = "/reviews";
 
@@ -30,6 +31,8 @@ function Reviews() {
 //         })
 //         .catch((err) => console.log(err));
 //     }, []);
+
+//[books.length]
 
 //     // Post review to api function
 

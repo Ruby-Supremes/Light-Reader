@@ -25,6 +25,7 @@ function BookProfile() {
                 <h5 className="card-title">Author</h5>
                 <h5 className="card-title">Genre</h5>
                 <p className="card-text">Description</p>
+                {/* <a href={`/books/${book.bookurl}`}>Read full Book</a> */}
                 {/* <Link to="/about"> <Button variant="outline-light" size="lg"> Read full book</Button></Link> */}
               </div>
             </div>
