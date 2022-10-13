@@ -18,4 +18,13 @@ class UsersController < ApplicationController
         def user_params
             params.permit(:username, :email, :password, :password_confirmation)
         end
+
+        # def record_invalid(invalid)
+        #     render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+        # end
+    
+        # def not_found
+        #     render json: {error: "User Not Found"}, status: :unauthorized
+        # end
+    
 end
