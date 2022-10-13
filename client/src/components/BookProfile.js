@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Reviews from "./Reviews";
 import {Link} from 'react-router-dom'
+import ViewReviews from "./ViewReviews";
 // import { useState } from "react";
 // import { BrowserRouter as NavLink } from 'react-router-dom'
 // import { useLocation } from "react-router-dom";
@@ -10,7 +11,12 @@ function BookProfile() {
 
     // const {state} = useLocation()
     // const {book} = state
-  const [show, setShow] = useState(false)
+
+
+          // const [show, setShow] = useState([])
+          // const toggle = () => {
+          //   setShow(show);
+          // }
    
 
   return (
@@ -33,13 +39,11 @@ function BookProfile() {
             </div>
           </div>
         </div>
-        
       </div>
-      <div>
-      <button className="btn btn-success text-center" onClick={() => setShow(!show)}>View or Add Reviews</button> 
-     {<Reviews />}
+      <Reviews />
+      <div className="container">
+        <ViewReviews />
       </div>
-      
     </center>
   );
 }
@@ -48,7 +52,6 @@ export default BookProfile;
 
 // ${book.id}
 // state={{book}}
-// :title, :coverpage, :description, :bookurl)
 
 // {book.coverpage}
 // {book.title}

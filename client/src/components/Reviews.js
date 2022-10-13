@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 // import axios from "axios";
@@ -80,7 +80,7 @@ function Reviews() {
 
   return (
     <div className="py-3">
-      <h4> Give Review</h4>
+      <h4> Give A Review</h4>
       <div style={{width: 500}}>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -91,7 +91,7 @@ function Reviews() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control type="text" 
-            name="description" placeholder="Review Description"/>
+            name="description" placeholder="Review Description" row={2}/>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control type="number" 
@@ -99,33 +99,13 @@ function Reviews() {
           </Form.Group>
          
           <div>
-          <Button variant="success" type="submit">Add</Button>
+          <Button variant="success" type="submit">Add Review</Button>
           
           </div>
         </Form>
       </div>
-       {/* Book  Reviews Section */}
-  
-          <div className="container py-5">
-            <center>  
-              <h4> Available Book Reviews </h4>
-             <div className="row row-cols-1 row-cols-md-4 py-3">
-            {/* {((dev, index)=> (   */}
-            {/* key={}  */}
-            <div   className="col mb-4">
-            <div className="card text-center h-100 shadow">  
-              <img src=".." className="card-img-top" alt=""/>
-              <div className="card-body">
-                <h6 className="card-title">Title</h6>
-                <p className="card-text"> Description</p>
-                <p className="card-text">Rating</p>
-              </div>
-            </div> 
-          </div> 
-          {/* ))} */}
-        </div>
-        </center> 
-      </div>
+
+       {/* Book  Reviews Section */}   
     </div>
   );
 }
