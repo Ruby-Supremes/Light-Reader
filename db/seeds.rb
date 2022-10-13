@@ -16,6 +16,10 @@ genres = Genre.create([
     {name: "fiction"}
 ])
 
+books = Book.create([
+    {title: "Think Big", coverpage: "", description: "", bookurl:""}
+])
+
 # reviews = Review.create([
 #     {title: "The best piece of literature"},
 #     {description: "The book presents a smooth chronological flow of events from the start till end "},
