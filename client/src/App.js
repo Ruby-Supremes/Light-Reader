@@ -2,6 +2,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import BookProfile from './components/BookProfile';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
@@ -39,6 +40,7 @@ function App() {
             </Routes>
           </div>
         </div>
+        <BookProfile />
       </div>
       <Home/>
     </Router>

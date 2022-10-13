@@ -9,7 +9,8 @@ import SignUp from '../SignUp'
 export default function App() {
   return (
     <Router>
-      <HomeCard />
+     
+        
       <div className="App">
        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
           <div className="container">
@@ -32,12 +33,13 @@ export default function App() {
             </div>
           </div>
         </nav>
-          {/* <div>
-            <Routes>
-              <Route path="/" element={<HomeCard />} />
-            </Routes>
-          </div> */}
+        
+        <div className = "container">
+               <HomeCard />
+          </div>
+          
          <div className="auth-wrapper">
+           
           <div className="auth-inner">
             <Routes>
               <Route exact path="/" element={<Login />} />
@@ -47,6 +49,7 @@ export default function App() {
           </div>
         </div>
       </div>
+    
     </Router>
   )
 }
