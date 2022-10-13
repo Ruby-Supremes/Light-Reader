@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Reviews from "./Reviews";
 import {Link} from 'react-router-dom'
+// import { useState } from "react";
 // import { BrowserRouter as NavLink } from 'react-router-dom'
 // import { useLocation } from "react-router-dom";
 // import Button from "react-bootstrap/Button";
@@ -9,7 +10,7 @@ function BookProfile() {
 
     // const {state} = useLocation()
     // const {book} = state
-  
+  const [show, setShow] = useState(false)
    
 
   return (
@@ -34,8 +35,10 @@ function BookProfile() {
         </div>
         
       </div>
-      <button className="btn btn-success text-center">View or Add Review</button> 
-     <Reviews />
+      <div>
+      <button className="btn btn-success text-center" onClick={() => setShow(!show)}>View or Add Reviews</button> 
+     {<Reviews />}
+      </div>
       
     </center>
   );

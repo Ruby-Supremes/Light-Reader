@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 // import axios from "axios";
@@ -16,6 +17,8 @@ function Reviews() {
   
   
 //     const [data, setData] = useState([]);
+
+//     const [status, setStatus] = useState('')
   
 //     const [title, setTitle] = useState("");
 //     const [description, setDescription] = useState("");
@@ -46,17 +49,24 @@ function Reviews() {
 //       })
 //       .then((res) => console.log("Posting Review", res))
 //       .catch((err) => console.log(err));
-//       alert("Review succesfully posted!");
+//       alert("Review posted succesfully!");
 //   };
 
 //   //Update data function using PUT
-
+    
 //   const updateReview = (id, e) => {
-//     // e.preventDefault();
-//     // axios.put(`http://localhost:9292/reviews/${id}`)
-//     // .then(res => console.log('Data Updated!!', res))
-//     //   .catch(err => console.log(err))
+//     // axios.put(`/reviews/${id}`, {
+//               title,
+//              description,
+//              rating
+//    })
+//      .then(res => {
+//          setStatus(res.status)
+//        console.log('Updating Review!!', res)})
+//      .catch(err => console.log(err))
+
 //   };
+
 
 //   //Deleting data function
 //   const deleteReview = (id, e) => {
@@ -105,7 +115,7 @@ function Reviews() {
             <div   className="col mb-4">
             <div className="card text-center h-100 shadow">  
               <img src=".." className="card-img-top" alt=""/>
-              <div className="card-body ">
+              <div className="card-body">
                 <h6 className="card-title">Title</h6>
                 <p className="card-text"> Description</p>
                 <p className="card-text">Rating</p>
