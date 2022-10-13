@@ -39,6 +39,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Home/>
     </Router>
   )
 }
