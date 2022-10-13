@@ -1,7 +1,14 @@
 class BooksController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :create_error
-  
+
+    skip_before_action :authenticate, only: [:homebooks]
+
+    def homebooks
+      books = Book.limit(3)
+      render json: books
+    end
+
   # GET /books
     def index
       books = Book.all
