@@ -1,11 +1,11 @@
-import React, { Component, useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
   
 
 function SignUp() {
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

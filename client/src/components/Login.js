@@ -1,15 +1,18 @@
 
-import React, { useState, useEffect } from 'react';
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+// import { NavLink } from "react-router-dom";
+// import { useNavigate } from 'react-router';
 import axios from 'axios';
 
-function Login() {
 
 
-  const [data, setData] = useState([]);
+function Login({onLogin}) {
+
+  // const [data, setData] = useState([]);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // const [errors, setErrors] = useState([]);
 
 // Ligin user sign up details
 
@@ -20,10 +23,18 @@ const postData = (e) => {
       username,
       password,
     })
-    .then((res) => console.log("Logging user", res))
+    .then((res) => console.log("Adding user", res))
     .catch((err) => console.log(err));
-    // alert("User logged in succesfully!");
+    // alert("User logged succesfully!");
 };
+    // .then((r) => {
+    //   if (r.ok) {
+    //     r.json().then((user) => onLogin(user));
+    //   } else {
+    //     r.json().then((err) => setErrors(err.errors));
+    //   }
+    // });
+  
 
   return (
     <form>
@@ -54,15 +65,18 @@ const postData = (e) => {
           <button type="submit" onClick={postData} className="btn btn-primary">
             Submit
           </button>
-
-          <NavLink to={`/developers/${dev.id}`} state={{dev}} className="btn btn-info text-center"> </NavLink>
+          
+          {/* <NavLink to={`/developers/${dev.id}`} state={{dev}} className="btn btn-info text-center"> </NavLink> */}
 
         </div>
         <p className="forgot-password text-right">
           Don't have an Account yet? <a href="/sign-up">Sign Up</a>
         </p>
       </form>
-  )
+
+  );
 }
+
+
 
 export default Login;
