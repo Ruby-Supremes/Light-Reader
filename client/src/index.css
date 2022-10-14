@@ -12,7 +12,8 @@
 
 }
 body {
-  background: #1C8EF9 !important;
+  background-image: url(../public/images/bg1.jpg); 
+  /* #1C8EF9 !important; */
   min-height: 100vh;
   display: flex;
   font-weight: 400;
