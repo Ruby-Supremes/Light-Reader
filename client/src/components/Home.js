@@ -2,6 +2,7 @@ import React from 'react'
 // import Books from './Books'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav'
+import HomeCard from './home/ HomeCard';
 
 
 function Home () {
@@ -9,27 +10,15 @@ function Home () {
     
     return(
         <div>
-        {/* <Nav className="justify-content-center" activeKey="/home">
-            <Nav.Item>
-                <Nav.Link href="/home">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="link-1">Create book</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-            <Nav.Link eventKey="link-2">Link</Nav.Link>
-            </Nav.Item>
-            
-      </Nav> */}
-            HELLO
-            <Container>
+            {/* <Container>
                 <Container>
                     <header>Home</header>
                     <h5>Here are some books worth reading</h5>
                 </Container>
-            </Container>
+            </Container> */}
             
             {/* <Books/> */}
+            <HomeCard/>
         </div>
     )
 }

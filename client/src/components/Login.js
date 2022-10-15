@@ -90,9 +90,9 @@ function Login({onLogin}) {
           {/* <NavLink to={`/developers/${dev.id}`} state={{dev}} className="btn btn-info text-center"> </NavLink> */}
 
         </div>
-        <p className="forgot-password text-right">
+        {/* <p className="forgot-password text-right">
           Don't have an Account yet? <a href="/sign-up">Sign Up</a>
-        </p>
+        </p> */}
       </form>
 
   );

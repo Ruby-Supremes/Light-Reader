@@ -5,7 +5,8 @@ class BooksController < ApplicationController
     skip_before_action :authenticate, only: [:homebooks]
 
     def homebooks
-      books = Book.limit(3)
+      # books = Book.limit(3)
+      books = Book.all
       render json: books
     end
 
