@@ -23,7 +23,8 @@ function Reviews() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [rating, setRating] = useState("");
-    const [user_id, setUser] = useState('')
+    const [user_id, setUser_id] = useState('')
+    const [book_id, setBook_id] = useState('')
   
     // Get all data from api 
     useEffect(() => {
@@ -64,6 +65,8 @@ function Reviews() {
         title,
         description,
         rating,
+        user_id,
+        book_id,
       }),
     })
       .then((r) => r.json())
@@ -72,6 +75,8 @@ function Reviews() {
     setTitle("");
     setDescription("");
     setRating('')
+    setUser_id('')
+    setBook_id('')
   }
 
   //Update data function using PUT
@@ -123,16 +128,18 @@ function Reviews() {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control type="number" 
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            name="description" placeholder="Review Description" row={2}/>
+              value={user_id}
+              onChange={(e) => setUser_id(e.target.value)}
+              autoComplete = 'user_id'
+            name="user_id" placeholder="User Id" row={2}/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control type="number" 
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            name="description" placeholder="Review Description" row={2}/>
+              value={book_id}
+              onChange={(e) => setBook_id(e.target.value)}
+              autoComplete = "book_id"
+            name="book_id" placeholder="Book Id" row={2}/>
           </Form.Group>
           
           <Form.Group className="mb-3" controlId="formBasicPassword">
