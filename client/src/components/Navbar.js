@@ -20,7 +20,7 @@ function Navbar({user, setUser}) {
                 <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-1">Create book</Nav.Link>
+                <Nav.Link href="/createbooks">Create book</Nav.Link>
             </Nav.Item>
             <Nav.Item>
             <Nav.Link eventKey="link-2">Link</Nav.Link>

@@ -1,100 +1,144 @@
-// import { useState } from "react";
+import react from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-// import axios from "axios";
-// import React, { useEffect, useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 // import { useLocation } from "react-router-dom";
 
 
 
 function Reviews() { 
 
-//     const url = "/reviews";
+    const url = "/reviews";
 
-//     const { state } = useLocation();
-//     const { book } = state;
-//     console.log(book);
+    // const { state } = useLocation();
+    // const { book } = state;
+    // console.log(book);
   
   
-//     const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
-//     const [status, setStatus] = useState('')
+    const [status, setStatus] = useState('')
   
-//     const [title, setTitle] = useState("");
-//     const [description, setDescription] = useState("");
-//     const [rating, setRating] = useState("");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [rating, setRating] = useState("");
+    const [user_id, setUser] = useState('')
   
-//     // Get all data from api 
-//     useEffect(() => {
-//       axios
-//         .get(url)
-//         .then((res) => {
-//           console.log(res.data);
-//           setData(res.data);
-//         })
-//         .catch((err) => console.log(err));
-//     }, []);
+    // Get all data from api 
+    useEffect(() => {
+      axios
+        .get(url)
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data);
+        })
+        .catch((err) => console.log(err));
+    }, []);
 
-//[books.length]
+// [books.length]
 
-//     // Post review to api function
+    // Post review to api function
 
-//   const postReview = (e) => {
-//     e.preventDefault();
-//     axios
-//       .post(url, {
-//         title,
-//         description,
-//         rating,
-//       })
-//       .then((res) => console.log("Posting Review", res))
-//       .catch((err) => console.log(err));
-//       alert("Review posted succesfully!");
-//   };
+  // const postReview = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post(url, {
+  //       title,
+  //       description,
+  //       rating,
+  //     })
+  //     .then((res) => console.log("Posting Review", res))
+  //     .catch((err) => console.log(err));
+  //     alert("Review posted succesfully!");
+  // };
 
-//   //Update data function using PUT
+  function postReview(e) {
+    e.preventDefault();
+    fetch('/reviews', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+        description,
+        rating,
+      }),
+    })
+      .then((r) => r.json())
+      .then((newReview) => console.log(newReview));
+
+    setTitle("");
+    setDescription("");
+    setRating('')
+  }
+
+  //Update data function using PUT
     
-//   const updateReview = (id, e) => {
-//     // axios.put(`/reviews/${id}`, {
-//               title,
-//              description,
-//              rating
-//    })
-//      .then(res => {
-//          setStatus(res.status)
-//        console.log('Updating Review!!', res)})
-//      .catch(err => console.log(err))
+  const updateReview = (id, e) => {
+    axios.put(`/reviews/${id}`, {
+              title,
+             description,
+             rating
+   })
+     .then(res => {
+         setStatus(res.status)
+       console.log('Updating Review!!', res)})
+     .catch(err => console.log(err))
 
-//   };
+  };
 
 
-//   //Deleting data function
-//   const deleteReview = (id, e) => {
-//     e.preventDefault();
-//     axios
-//       .delete(`/reviews/${id}`)
-//       .then((res) => console.log("Deleted!!", res))
-//       .catch((err) => console.log(err));
-//       alert("Review succesfully deleted!");
-//   };
+  //Deleting data function
+  const deleteReview = (id, e) => {
+    e.preventDefault();
+    axios
+      .delete(`/reviews/${id}`)
+      .then((res) => console.log("Deleted!!", res))
+      .catch((err) => console.log(err));
+      alert("Review succesfully deleted!");
+  };
 
   return (
     <div className="py-3">
       <h4> Give A Review</h4>
       <div style={{width: 500}}>
-        <Form>
+        <Form onSubmit = {postReview}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="text" 
-
+              
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
 
             name="title" placeholder="Enter Review Title" />
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control type="text" 
+          <Form.Control type="text" 
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             name="description" placeholder="Review Description" row={2}/>
           </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Control type="number" 
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            name="description" placeholder="Review Description" row={2}/>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Control type="number" 
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            name="description" placeholder="Review Description" row={2}/>
+          </Form.Group>
+          
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control type="number" 
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
             name="rating" min="1" max="10" placeholder="Rating"/>
           </Form.Group>
          
@@ -113,46 +157,4 @@ function Reviews() {
 
 export default Reviews;
 
-// value={title}
-//             onChange={(e) => setTitle(e.target.value)}
 
-// <div className="container py-5">
-  //  <center>  
-  //   <h3>View Available Developers Here</h3>
-  //   <div className="row row-cols-1 row-cols-md-4 py-3">
-  //   {data.map((dev, index)=> (  
-  //     <div key={index} className="col mb-4">
-  //       <div className="card text-center h-100 shadow">  
-  //         <img src={dev.image_url} className="card-img-top" alt=""/>
-  //         <div className="card-body ">
-  //           <h5 className="card-title">{dev.first_name}</h5>
-  //           <p className="card-text"> {dev.developer.category}</p>
-  //           <p className="card-text">Experience: {dev.experience} yrs</p>
-  //         </div>
-  //       </div> 
-  //     </div> ))}
-  //   </div>
-  //   </center> 
-  // </div>
-
-
-  // <div className="container">
-  //     <h4 className="py-3">Available Reviews</h4>
-  //     <div className="row row-cols-1 row-cols-md-4 py-4">
-  //     <div>
-  //       <div className="card py-3">
-  //         <div className="col mb-4">
-  //           <div>
-  //             <div>
-  //               <h6 className="card-title">Review title</h6>
-  //               <p className="card-title">Description</p>
-  //               <p className="card-text">Rating</p>
-  //           </div>
-  //           <Button style={{margin: 5, height: 35}} variant="warning" type="submit">Edit</Button>
-  //           <Button style={{ height: 35}} variant="danger" type="submit">Delete</Button>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       </div>
-  //      </div>
-  //      </div>

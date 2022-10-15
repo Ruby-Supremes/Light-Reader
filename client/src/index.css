@@ -35,8 +35,71 @@ body, html, .App, #root, .auth-wrapper {
 
 .details{
   background-color: #ffffff;
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiVIkNzbpPIvlAmtB4AjlObkcStXCyqQ2Jig&usqp=CAU"); */
+  height: auto; 
+  width: auto;
+  /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+   /* Do not repeat the image */
+  background-size: cover;
+  align-items:center;
   
 }
+
+.bookapp {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+.pbody{
+  font-size: 18px;
+  font-weight:400;
+}
+.sidebar {
+  min-height: 100vh;
+  min-width: 12em;
+  width: 28%;
+  border-right: solid black 1px;
+  background: #FCDE67;
+  padding: 1em;
+}
+
+.poems-container > div {
+  border-bottom: solid 1px grey;
+  padding-bottom: 1em;
+  min-width: 20em;
+}
+
+.poems-container > div > button {
+  min-width: 4em;
+}
+
+form.new-poem-form {
+  border: solid black 1px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+form.new-poem-form > input,
+form.new-poem-form > textarea {
+  font-size: 1em;
+  font-family: sans-serif;
+  margin-bottom: 0.5em;
+}
+
+input[type="submit"],
+button {
+  font-weight: bold;
+  font-size: 1em;
+  background: #AC7088;
+  border: solid black 1px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+
 .auth-wrapper {
   display: flex;
   justify-content: center;
