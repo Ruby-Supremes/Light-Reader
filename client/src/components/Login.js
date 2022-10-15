@@ -12,21 +12,23 @@ function Login({onLogin}) {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   // const [errors, setErrors] = useState([]);
 
 // Ligin user sign up details
 
-const postData = (e) => {
-  e.preventDefault();
-  axios
-    .post("/login", {
-      username,
-      password,
-    })
-    .then((res) => console.log("Adding user", res))
-    .catch((err) => console.log(err));
-    // alert("User logged succesfully!");
-};
+// const postData = (e) => {
+//   e.preventDefault();
+//   axios
+//     .post("/login", {
+//       username,
+//       password,
+//     })
+//     .then((res) => console.log("Adding user", res))
+//     .catch((err) => console.log(err));
+//     // alert("User logged succesfully!");
+// };
     // .then((r) => {
     //   if (r.ok) {
     //     r.json().then((user) => onLogin(user));
@@ -34,10 +36,29 @@ const postData = (e) => {
     //     r.json().then((err) => setErrors(err.errors));
     //   }
     // });
+   
   
+    function handleSubmit(e) {
+      e.preventDefault();
+      setIsLoading(true);
+      fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      }).then((r) => {
+        setIsLoading(false);
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <h3>Sign In</h3>
         <div className="mb-3">
           <input
@@ -62,7 +83,7 @@ const postData = (e) => {
           </div>
         </div>
         <div className="d-grid">
-          <button type="submit" onClick={postData} className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
           

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import { redirect } from 'react-router-dom';
 import axios from 'axios';
 
   
 
-function SignUp() {
+function SignUp({onLogin}) {
 
   // const [data, setData] = useState([]);
 
@@ -11,25 +12,58 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPassword_Confirmation] = useState("")
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
 // Create user sign up details
 
-const postData = (e) => {
+// const postData = (e) => {
+//   e.preventDefault();
+//   axios
+//     .post("/signup", {
+//       username,
+//       email,
+//       password,
+//       password_confirmation,
+//     })
+//     .then((res) => console.log("Adding user", res))
+//     .catch((err) => console.log(err));
+//     // alert("User added succesfully!");
+// };
+// let navigate = useNavigate();
+
+function handleSubmit(e) {
   e.preventDefault();
-  axios
-    .post("/signup", {
+  setErrors([]);
+  setIsLoading(true);
+  fetch("/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
       username,
       email,
       password,
       password_confirmation,
-    })
-    .then((res) => console.log("Adding user", res))
-    .catch((err) => console.log(err));
-    // alert("User added succesfully!");
-};
+    }),
+  }).then((r) => {
+    setIsLoading(false);
+    if (r.ok) {
+      r.json().then((user) => console.log(user));
+    } else {
+      r.json().then((err) => setErrors(err.errors));
+    }
+  });
+  // navigate('/login')
+
+}
+function  red(){
+  <redirect to='/login'/>
+}
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <h3>Sign Up</h3>
         <div className="mb-3">
           <input
@@ -37,8 +71,7 @@ const postData = (e) => {
             onChange={(e) => setUsername(e.target.value)}
             name="username"
             className="form-control"
-            placeholder="Username"
-          />
+xcvbn          />
         </div>
         <div className="mb-3">
           <input
@@ -68,7 +101,7 @@ const postData = (e) => {
           />
         </div>
         <div className="d-grid">
-          <button type="submit" onClick={postData} className="btn btn-primary">
+          <button type="submit"  className="btn btn-primary" onClick={red}>
             Sign Up
           </button>
         </div>

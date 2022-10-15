@@ -1,5 +1,5 @@
 
-.scard{
+/* .scard{
   
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
@@ -8,8 +8,9 @@
   float:left;
   width: 30%;
   padding-bottom: 1em;
-  
-
+} */
+.scard{
+  float:right;
 }
 body {
   background-image: url(../public/images/bg1.jpg); 
