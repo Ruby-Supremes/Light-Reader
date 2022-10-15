@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import {Link} from 'react-router-dom'
 
 export default function Home({book}) {
-  
-  const {title,coverpage, description, bookurl, genre_id} = book
+ 
+
+  const {id,title,coverpage, description, bookurl, genre_id} = book
   return (
     <div className ="container">
     <div className='scard' >
@@ -16,7 +18,8 @@ export default function Home({book}) {
         <Card.Text>
       
         </Card.Text>
-        <Button variant="info">More ...</Button>
+        <Link to={'/book/'+ id}>Read More</Link>
+        {/* <Button variant="info">More ...</Button> */}
       </Card.Body>
     </Card>
     </div>

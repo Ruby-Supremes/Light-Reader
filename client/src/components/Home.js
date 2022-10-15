@@ -10,14 +10,6 @@ function Home () {
     
     return(
         <div>
-            {/* <Container>
-                <Container>
-                    <header>Home</header>
-                    <h5>Here are some books worth reading</h5>
-                </Container>
-            </Container> */}
-            
-            {/* <Books/> */}
             <HomeCard/>
         </div>
     )

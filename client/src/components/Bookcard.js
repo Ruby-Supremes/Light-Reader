@@ -1,29 +1,57 @@
-// import React from 'react';
-// // import { Link } from "react-router-dom";
-// import Card from 'react-bootstrap/Card'
-// import Button from 'react-bootstrap/Button';
-// import Container from 'react-bootstrap/Container';
+import React,{useEffect, useState} from 'react'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom';
 
 
+export default function BookCard() {
+    const [title, setTitle] = useState("")
+    const [coverpage, setCoverpage] = useState("")
+    const [description, setDescription] = useState("")
+    const [bookurl, setBookurl] = useState("")
+  
+    let {id} = useParams()
+//   const {title,coverpage, description, bookurl, genre_id} = book
+    const bookUrl = "/books/"+id
+    const bookFetcher = () =>{
+        fetch(bookUrl)
+        .then(res => res.json())
+           .then((data) => {
+            console .log(data)
+            console.log(data.books)
+            const book = data
+            
 
-// function Bookcard({title, image, description}) {
+            setTitle(book.title)
+            setCoverpage(book.coverpage)
+            setDescription(book.description)
+            setBookurl(book.bookurl)
+           })
+    }
 
-//     return (
-//         <Container>
-//             <Card style={{ width: '15rem' }}>
-//                 <Card.Img variant={image} src="holder.js/100px180" />
-//                 <Card.Body>
-//                     <Card.Title>{title}</Card.Title>
-//                     <Card.Text>
-//                     {description}
-//                     Some quick example text to build on the card title and make up the
-//                     bulk of the card's content.
-//                     </Card.Text>
-//                     <Button variant="primary">Read more...</Button>
-//                 </Card.Body>
-//             </Card>
-//         </Container>
-//     )
-// }
+    useEffect(
+        bookFetcher,[]
+    )
 
-// export default Bookcard
+  return (
+    <div className='details'>
+    <div className ="container">
+    <div className='scard' >
+      
+      <Card style={{height: 200 + 'px', width:200 + 'px',}}>
+      <Card.Img variant="top" src={coverpage} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>
+            {description}
+        </Card.Text>
+        <h6>{bookurl}</h6>
+        {/* <Button variant="info">More ...</Button> */}
+       
+      </Card.Body>
+    </Card>
+    </div>
+    </div>
+    </div>
+  )
+}
