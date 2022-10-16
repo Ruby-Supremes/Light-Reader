@@ -13,7 +13,7 @@
   float:right;
 }
 body {
-  background-image: url(../public/images/bg1.jpg); 
+  /* background-image: url(../public/images/bg1.jpg);  */
   /* #1C8EF9 !important; */
   min-height: 100vh;
   display: flex;

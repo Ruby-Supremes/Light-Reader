@@ -7,14 +7,11 @@ function  HomeContainer({books}) {
     <div className="container">
       {books.map(book => {
         return (
-          <Home
-            key={book.id} 
-            book={book}  
-          />
+          <Home key={book.id} book={book} />
         )
         })}
         
     </div>
   )
 }
-export default HomeContainer
+export default HomeContainer;
