@@ -61,7 +61,7 @@ function Login({onLogin}) {
 
   return (
     <form onSubmit={handleSubmit}>
-        <h3>Sign In</h3>
+        <h3>Login</h3>
         <div className="mb-3">
           <input
             type="text" value={username}
@@ -86,15 +86,9 @@ function Login({onLogin}) {
         </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
-            Submit
+            LOGIN
           </button>
-          
-          {/* <NavLink to={`/developers/${dev.id}`} state={{dev}} className="btn btn-info text-center"> </NavLink> */}
-
-        </div>
-        {/* <p className="forgot-password text-right">
-          Don't have an Account yet? <a href="/sign-up">Sign Up</a>
-        </p> */}
+          </div>
       </form>
 
   );

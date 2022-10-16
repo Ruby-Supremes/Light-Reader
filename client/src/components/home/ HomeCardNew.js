@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import HomeContainer from './HomeContainer'
+import Navbar from '../Navbar';
 
-export default function  HomeCard() {
+export default function  HomeCardNew() {
 
     const [books, setBooks] = useState([]);
     // const booksToDisplay = books.all
@@ -15,9 +16,10 @@ export default function  HomeCard() {
 // console.log(data)
 
   return (
+    <div>
     <HomeContainer
         books={books}
-      
     />
+    </div>
   )
 }

@@ -50,7 +50,9 @@ function handleSubmit(e) {
   }).then((r) => {
     setIsLoading(false);
     if (r.ok) {
-      r.json().then((user) => console.log(user));
+      r.json()
+      alert("You have successfuly signed up, proceed to Login")
+      .then((user) => console.log(user));
     } else {
       r.json().then((err) => setErrors(err.errors));
     }
@@ -70,6 +72,7 @@ function  red(){
             type="text" value={username}
             onChange={(e) => setUsername(e.target.value)}
             name="username"
+            placeholder="Enter Username"
             className="form-control"
 xcvbn          />
         </div>
@@ -105,9 +108,9 @@ xcvbn          />
             Sign Up
           </button>
         </div>
-        <p className="forgot-password text-right">
+        {/* <p className="forgot-password text-right">
           Already registered <a href="/sign-in">sign in?</a>
-        </p>
+        </p> */}
       </form>
     )
   

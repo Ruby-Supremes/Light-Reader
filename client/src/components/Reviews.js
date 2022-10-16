@@ -37,23 +37,7 @@ function Reviews() {
         .catch((err) => console.log(err));
     }, []);
 
-// [books.length]
-
-    // Post review to api function
-
-  // const postReview = (e) => {
-  //   e.preventDefault();
-  //   axios
-  //     .post(url, {
-  //       title,
-  //       description,
-  //       rating,
-  //     })
-  //     .then((res) => console.log("Posting Review", res))
-  //     .catch((err) => console.log(err));
-  //     alert("Review posted succesfully!");
-  // };
-
+// Post Reviews 
   function postReview(e) {
     e.preventDefault();
     fetch('/reviews', {
@@ -79,36 +63,12 @@ function Reviews() {
     setBook_id('')
   }
 
-  //Update data function using PUT
-    
-  const updateReview = (id, e) => {
-    axios.put(`/reviews/${id}`, {
-              title,
-             description,
-             rating
-   })
-     .then(res => {
-         setStatus(res.status)
-       console.log('Updating Review!!', res)})
-     .catch(err => console.log(err))
 
-  };
-
-
-  //Deleting data function
-  const deleteReview = (id, e) => {
-    e.preventDefault();
-    axios
-      .delete(`/reviews/${id}`)
-      .then((res) => console.log("Deleted!!", res))
-      .catch((err) => console.log(err));
-      alert("Review succesfully deleted!");
-  };
 
   return (
     <div className="py-3">
       <h4> Give A Review</h4>
-      <div style={{width: 500}}>
+      <div style={{maxWidth: 500}}>
         <Form onSubmit = {postReview}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="text" 
@@ -154,9 +114,7 @@ function Reviews() {
           
           </div>
         </Form>
-      </div>
-
-       {/* Book  Reviews Section */}   
+      </div>  
     </div>
   );
 }
