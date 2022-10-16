@@ -69,7 +69,7 @@ function BookForm({addBook}) {
       
       <input 
         type="submit" 
-        value="Share your masterpiece" 
+        value="Post  Book" 
       />
     </form>
   );

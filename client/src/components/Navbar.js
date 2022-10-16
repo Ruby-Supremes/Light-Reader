@@ -23,6 +23,9 @@ function Navbar({user, setUser}) {
                 <Nav.Link href="/createbooks">Create book</Nav.Link>
             </Nav.Item>
             <Nav.Item>
+                <Nav.Link href="/genres"> Book Genre</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
             <Nav.Link eventKey="link-2">Link</Nav.Link>
             </Nav.Item>   
             <button  type="submit" onClick={handleLogoutClick}>Logout</button>   
