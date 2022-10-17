@@ -1,14 +1,18 @@
 
-/* .scard{
+.scar{
   
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 20px;
   margin:0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   float:left;
-  width: 30%;
+  width: 25%;
   padding-bottom: 1em;
-} */
+}
 .scard{
   float:right;
 }
