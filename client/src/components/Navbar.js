@@ -26,6 +26,9 @@ function Navbar({ user, setUser }) {
           <Nav.Item>
             <Nav.Link style={{color: 'white'}} href="/createbooks">CREATE BOOK</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+                <Nav.Link style={{color: 'white'}} href="/genres">BOOK GENRE</Nav.Link>
+          </Nav.Item>
           {/* <Nav.Item>
           <Nav.Link eventKey="link-2">Link</Nav.Link>
         </Nav.Item> */}
