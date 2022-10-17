@@ -30,7 +30,7 @@ function ViewReviews({ review, onDeleteReview }) {
   //   })
   //   }
 
-  const { title, description, rating } = review;
+  // const { title, description, rating } = review;
 
   // function handleUpdate(review) {
   //   fetch(`/reviews/${id}`, {

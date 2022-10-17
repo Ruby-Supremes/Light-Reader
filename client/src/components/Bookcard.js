@@ -68,12 +68,13 @@ export default function BookCard({removeBook}) {
               {/* <h5 className="card-title">Author</h5> */}
               <h5 className="card-title">{book}</h5>
               <p className="card-text">{description}</p>
-              <a href= {bookurl}>READ</a>
-              <button >
+              <a href= {bookurl}>Read Full Book</a>
+              <br/><br/>
+              <button style={{margin: 15}} className='btn btn-warning'>
               <Link className='nav-link' to={'/editbook/'+ id}>Edit</Link>
               </button>
               
-              <button onClick={onDeleteClick} >
+              <button className='btn btn-danger' onClick={onDeleteClick} >
                 Delete
               </button>
             </div>
