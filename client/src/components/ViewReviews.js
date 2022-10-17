@@ -32,9 +32,8 @@ function ViewReviews({ review, onDeleteReview }) {
 
   const { title, description, rating } = review;
 
-  // function handleUpdateRating(pct) {
-  //   const newRating = pct * 5;
-  //   fetch(`/spices/${id}`, {
+  // function handleUpdate(review) {
+  //   fetch(`/reviews/${id}`, {
   //     method: "PATCH",
   //     headers: {
   //       "Content-Type": "application/json",
@@ -42,7 +41,7 @@ function ViewReviews({ review, onDeleteReview }) {
   //     body: JSON.stringify({ rating: newRating }),
   //   })
   //     .then((r) => r.json())
-  //     .then(onUpdateSpice);
+  //     .then(onUpdateReview);
   // }
 
   function handleDeleteReview(id, e) {
@@ -119,10 +118,3 @@ export default ViewReviews;
 // onclick={(e)=> {deleteReview(review.id, e)}}
 
 
-// const deleteReview = (id, e) => {
-//   e.preventDefault();
-//   axios
-//     .delete(`/reviews/${id}`)
-//     .then((res) => console.log("Deleted!!", res))
-//     .catch((err) => console.log(err));
-// };
