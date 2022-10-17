@@ -1,27 +1,29 @@
 import React,{useEffect, useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useParams } from 'react-router-dom';
+import { useParams, Link,useNavigate} from 'react-router-dom';
 import Reviews from './Reviews'
 import ViewReviews from './ViewReviews'
 
 
-export default function BookCard() {
+export default function BookCard({removeBook}) {
     const [title, setTitle] = useState("")
     const [coverpage, setCoverpage] = useState("")
     const [description, setDescription] = useState("")
     const [bookurl, setBookurl] = useState("")
-    const[genre,setGenre]=useState("")
+    const[book,setBook]=useState("")
+    const [books, setBooks] = useState([]);
   
     let {id} = useParams()
-//   const {title,coverpage, description, bookurl, genre_id} = book
+    let navigate = useNavigate();
+    const bookAPI ='/books'
+//   const {title,coverpage, description, bookurl, book_id} = book
     const bookUrl = "/books/"+id
     const bookFetcher = () =>{
         fetch(bookUrl)
         .then(res => res.json())
            .then((data) => {
             console .log(data)
-            console.log(data.books)
             const book = data
             
 
@@ -36,6 +38,20 @@ export default function BookCard() {
     useEffect(
         bookFetcher,[]
     )
+
+    function removeBook(bookToRemove) {
+      setBook(books.filter(book => book.id !== bookToRemove.id))
+    }
+    
+
+    function onDeleteClick(e) {
+      e.preventDefault();
+      fetch(`${bookAPI}/${id}`, {
+        method: "DELETE",
+      });
+      removeBook(book);
+      navigate(`/home`)
+    }
 
   return (
     // <div className='details'>
@@ -82,9 +98,16 @@ export default function BookCard() {
             <div className="card-body">
               <h4 className="card-title">{title}</h4>
               {/* <h5 className="card-title">Author</h5> */}
-              <h5 className="card-title">{genre}</h5>
+              <h5 className="card-title">{book}</h5>
               <p className="card-text">{description}</p>
               <a href= {bookurl}>READ</a>
+              <button >
+              <Link className='nav-link' to={'/editbook/'+ id}>Edit</Link>
+              </button>
+              
+              <button onClick={onDeleteClick} >
+                Delete
+              </button>
             </div>
           </div>
         </div>

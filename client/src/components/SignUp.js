@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { redirect } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
   
@@ -74,6 +74,7 @@ function  red(){
             name="username"
             placeholder="Enter Username"
             className="form-control"
+            required
 xcvbn          />
         </div>
         <div className="mb-3">
@@ -83,6 +84,7 @@ xcvbn          />
             name="email"
             className="form-control"
             placeholder="Enter email"
+            required
           />
         </div>
         <div className="mb-3">
@@ -92,6 +94,7 @@ xcvbn          />
             name="password"
             className="form-control"
             placeholder="Enter password"
+            required
           />
         </div>
         <div className="mb-3">
@@ -101,6 +104,7 @@ xcvbn          />
             name="password_confirm"
             className="form-control"
             placeholder="Password confirmation"
+            required
           />
         </div>
         <div className="d-grid">

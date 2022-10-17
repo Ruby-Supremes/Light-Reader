@@ -6,6 +6,9 @@ import Home from '../Home'
 import Navbar from "../Navbar";
 import BookCard from "../Bookcard";
 import BookForm from "../BookForm";
+import GenreCard from "../genre/GenreCard";
+import UpdateGenre from "../genre/UpdateGenre";
+import EditBook from "../EditBook";
 
 import Auth from "../Auth";
 
@@ -40,9 +43,12 @@ export default function App() {
           
             <Routes>
               <Route exact path="/home" element={<Home />} />
+              <Route exact path="/" element={<Home />} />
               <Route exact path="/createbooks" element={<BookForm />} />
+              <Route exact path="/genres" element={<GenreCard />} />
               <Route exact path="/book/:id" element={<BookCard/>} />
-
+              <Route exact path="/editbook/:id" element={<EditBook/>} />
+              <Route exact path='/genre/:id' element={<UpdateGenre />}/>
             </Routes>
           </div>
     </Router>
