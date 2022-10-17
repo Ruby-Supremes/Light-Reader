@@ -92,7 +92,7 @@ function BookForm({ addBook }) {
                         />
                       </div>
                     </div>
-                    <button type="submit" className="btn btn-success">
+                    <button type="submit" className="btn btn-primary">
                       Add New Book
                     </button>
                   </div>

@@ -117,7 +117,7 @@ button {
   transition: all .3s;
 }
 .auth-wrapper .form-control:focus {
-  border-color: #167bff;
+  /* border-color: #167bff; */
   box-shadow: none;
 }
 .auth-wrapper h3 {

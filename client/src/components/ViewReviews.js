@@ -1,32 +1,59 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function ViewReviews() {
+function ViewReviews({ review, onDeleteReview }) {
 
+  const [data, setData] = useState([]);
+
+    // Get all data from api 
+    useEffect(() => {
+      axios
+        .get('/reviews')
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data);
+        })
+        .catch((err) => console.log(err));
+    }, []);
 
 // Update Review 
   const[newTitle, setNewTitle] = useState("")
   const[newDescription, setNewDescription] = useState("")
   const[newRating, setNewRating] = useState("")
 
-    const updateReview = (id, e) => {
-      e.preventDefault();
-    axios.put(`/reviews/${id}`, {
-    title: newTitle,
-    description: newDescription,
-    rating: newRating,
-    })
-    }
+  //   const updateReview = (id, e) => {
+  //     e.preventDefault();
+  //   axios.put(`/reviews/${id}`, {
+  //   title: newTitle,
+  //   description: newDescription,
+  //   rating: newRating,
+  //   })
+  //   }
 
-//Deleting data function
-    const deleteReview = (id, e) => {
-    e.preventDefault();
-    axios
-    .delete(`url${id}`)
-    .then((res) => console.log("Deleted!!", res))
-    .catch((err) => console.log(err));
-    };
+  const { title, description, rating } = review;
 
+  // function handleUpdateRating(pct) {
+  //   const newRating = pct * 5;
+  //   fetch(`/spices/${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ rating: newRating }),
+  //   })
+  //     .then((r) => r.json())
+  //     .then(onUpdateSpice);
+  // }
+
+  function handleDeleteReview(id, e) {
+    fetch(`/reviews/${id}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        onDeleteReview(review);
+      }
+    });
+  }
 
   return (
     <div className="container py-5">
@@ -35,13 +62,12 @@ function ViewReviews() {
 
         
         <div className="reviews-list row">
-          {/* {((dev, index)=> (   */}
-          {/* key={}  */}
-          <div className="card mt-4 col-md-6">
+        {data.map((review, index)=> (            
+          <div key={index}  className="card mt-4 col-md-6">
             <div className="card-body">
-              <h5 className="card-title">Title</h5>
-              <p className="card-text">Description</p>
-              <p className="card-text">Rating</p>
+              <h5 className="card-title">{review.title}</h5>
+              <p className="card-text">{review.description}</p>
+              <p className="card-text">{review.rating}</p>
               <div>
               <form>
                 <div className="form-group" style={{ margin: 5 }}>
@@ -68,13 +94,13 @@ function ViewReviews() {
                 </div>
                 </form>
               </div>
-              <button className="btn btn-warning" style={{ marginRight: 5 }}>
+              <button  className="btn btn-warning" style={{ marginRight: 5 }}>
                 Update Review
               </button>
-              <button className="btn btn-danger">Delete Review</button>
+              <button onClick={handleDeleteReview} className="btn btn-danger">Delete Review</button>
             </div>
           </div>
-          {/* ))} */}
+           ))}
         </div>
       </center>
     </div>
@@ -89,6 +115,14 @@ export default ViewReviews;
 // onChange={(e) => setNewDescription(e.target.value)}
 //  onChange={(e) => setNewRating(e.target.value)}
 
-// onclick={(e)=> {updateReview(book.id, e)}}
-// onclick={(e)=> {deleteReview(book.id, e)}}
+// onclick={(e)=> {updateReview(review.id, e)}}
+// onclick={(e)=> {deleteReview(review.id, e)}}
 
+
+// const deleteReview = (id, e) => {
+//   e.preventDefault();
+//   axios
+//     .delete(`/reviews/${id}`)
+//     .then((res) => console.log("Deleted!!", res))
+//     .catch((err) => console.log(err));
+// };
