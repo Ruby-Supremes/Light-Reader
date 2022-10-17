@@ -16,9 +16,22 @@
 .scard{
   float:right;
 }
-body {
-  /* background-image: url(../public/images/bg1.jpg);  */
+.homepage{
+    background-image: url('https://media.istockphoto.com/photos/textbooks-stacked-on-school-desk-with-chalkboard-background-picture-id638383032?b=1&k=20&m=638383032&s=170667a&w=0&h=T8UqCXjblfdTPKu4LlLHqJWizWbd3LEhEkJHAMcB83I=');
+  background-image: url(../public/images/bg1.jpg);  
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  font-weight: 400;
+  font-family: 'Fira Sans', sans-serif;
   /* #1C8EF9 !important; */
+}
+body {
+
+  
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   font-weight: 400;

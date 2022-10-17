@@ -9,7 +9,7 @@ function Auth({ onLogin }) {
   return (
     <div className="container py-5">
       <center>
-      <div>
+      <div className = "homepage">
       <div className="auth-inner">
         {/* <Logo>Reciplease</Logo> */}
         {showLogin ? (

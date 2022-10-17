@@ -36,7 +36,7 @@ function Login({onLogin}) {
     //     r.json().then((err) => setErrors(err.errors));
     //   }
     // });
-   
+
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -57,6 +57,9 @@ function Login({onLogin}) {
         }
         
       });
+      // setUsername('')
+      // setPassword('')
+      
     }
 
   return (
@@ -64,7 +67,8 @@ function Login({onLogin}) {
         <h3>Login</h3>
         <div className="mb-3">
           <input
-            type="text" value={username}
+            type="text" 
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             name="username"
             className="form-control"
