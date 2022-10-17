@@ -26,18 +26,14 @@ function NewGenre({addGenre}) {
   }
 
   return (
-    <form className="new-poem-form" onSubmit={handleSubmit} >
-      <input 
-        placeholder="Name" 
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-      <input 
-        type="submit" 
-        value="Add genre" 
-      />
+    <div>
+      <center>
+      <form onSubmit={handleSubmit} >
+      <input style={{margin: 8}} placeholder="Name of genre" value={name} onChange={(e) => setName(e.target.value)} required/>
+      <button className='btn btn-primary' type="submit" value="Add genre">Add Genre</button>
     </form>
+      </center>
+    </div>
   );
 }
 

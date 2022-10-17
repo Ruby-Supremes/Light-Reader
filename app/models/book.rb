@@ -3,7 +3,7 @@ class Book < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
 
-  validates :title, :description, :bookurl, :coverpage, :genre_id, presence: true
+  validates :title, :description, :bookurl, :coverpage, presence: true
   validates :description, length: { minimum: 6 }
-
+  # validates :genre_id 
 end

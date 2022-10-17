@@ -17,14 +17,14 @@ function Genre({genre, removeGenre}) {
 
 
   return (
-    <div>
+    <div className='py-4'>
       <h3>{name}</h3>
      
-      <button >
+      <button className='btn btn-warning' style={{margin: 15}}>
       <Link className='nav-link' to={'/genre/'+ id}>Edit</Link>
       </button>
        
-      <button onClick={onDeleteClick} >
+      <button className='btn btn-danger' onClick={onDeleteClick} >
         Delete
       </button>
     </div>

@@ -6,12 +6,7 @@ function GenreContainer({genres, removeGenre}) {
     <div className="poems-container">
       {genres.map(genre => {
         return (
-          <Genre
-            key={genre.id} 
-            genre={genre} 
-            removeGenre={removeGenre} 
-          
-          />
+          <Genre key={genre.id}  genre={genre} removeGenre={removeGenre} />
         )
         })}
     </div>

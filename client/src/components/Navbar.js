@@ -29,17 +29,8 @@ function Navbar({ user, setUser }) {
           <Nav.Item>
                 <Nav.Link style={{color: 'white'}} href="/genres">BOOK GENRE</Nav.Link>
           </Nav.Item>
-          {/* <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-        </Nav.Item> */}
-          <button
-            className="btn btn-info"
-            type="submit"
-            onClick={handleLogoutClick}
-          >
-            LOGOUT
-          </button>
-        </Nav>
+            <button className="btn btn-info" type="submit" onClick={handleLogoutClick}> LOGOUT </button>
+          </Nav>
       </div>
     </div>
   );

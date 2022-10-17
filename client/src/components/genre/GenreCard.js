@@ -25,17 +25,18 @@ function GenreCard() {
 
 
   return (
-    <div className="bookapp">
-      <div className="sidebar">
-     
-     <NewGenre addGenre={addGenre} />
+   <div className="container py-5">
+     <center>
+     <div>
+      <div>
+        <NewGenre addGenre={addGenre} />
       </div>
-      <GenreContainer 
-          genres={genres} 
-          removeGenre={removeGenre} 
-        />
+      <GenreContainer genres={genres} removeGenre={removeGenre}/>
     </div>
+     </center>
+   </div>
   );
 }
 
 export default GenreCard;
+

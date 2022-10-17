@@ -54,38 +54,6 @@ export default function BookCard({removeBook}) {
     }
 
   return (
-    // <div className='details'>
-    // <div className ="container">
-    // <div className='scard' >
-
-    //   <Card style={{height: 200 + 'px', width:200 + 'px',}}>
-    //   <Card.Img variant="top" src={coverpage} />
-    //   <Card.Body>
-    //     <Card.Title>{title}</Card.Title>
-    //     <Card.Text>
-           
-    //     </Card.Text>
-        
-    //     {/* <Button variant="info">More ...</Button> */}
-       
-    //   </Card.Body>
-    // </Card>
-    // <br/>
-    // <br/>
-    
-    // </div>
-    // </div>
-    // {description}
-    // <br/>
-    // <a href= {bookurl}>READ</a>
-    //     {/* <h6>{bookurl}</h6> */}
-    //     <br/>
-    //     <Reviews />
-    //   <div className="container">
-    //     <ViewReviews />
-    //   </div>
-    // </div>
-
     <center>
     <div className="container py-5">
       <h2>Book Details</h2>

@@ -44,21 +44,16 @@ export default function UpdateGenre() {
       
 
   return (
-    <div className='container'>
-      <form className="new-poem-form" onSubmit={handleSubmit} >
-        <input 
-          placeholder="name" 
-          name='name'
-          value={genreData.name}
-          type = "text"
-          onChange={onFormChange}
-        />
-
-        <input 
-          type="submit" 
-          value="Update" 
-        />
-    </form>
+    <div className='container py-5'>
+      <center>
+          <form onSubmit={handleSubmit} >
+            <div className='py-4'>
+            <input placeholder="name" name='name'value={genreData.name} type = "text"
+              onChange={onFormChange}/>
+            </div>
+            <button className='btn btn-primary' type="submit" value="Update"> Update Genre</button>
+          </form>
+      </center>
     </div>
   )
 }
