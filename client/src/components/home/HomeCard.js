@@ -35,12 +35,14 @@ function handleUpdateItem(updatedItem) {
 // console.log(data)
 
   return (
-    <div className='bookapp'>
-      <div className='sidebar'>
+    <div className='container'>
+      {/* <div className='sidebar'>
        <BookForm addBook = {addBook}/>
-      </div>
+      </div> */}
       <HomeContainer
           books={books}
+          removeBook = {removeBook}
+
         />
     </div>
     

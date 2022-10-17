@@ -75,7 +75,7 @@ function BookForm({ addBook }) {
                       </div>
                       <div className="form-group" style={{ margin: 5 }}>
                         <input
-                          type="number"
+                          type="text"
                           className="form-control"
                           placeholder="book url"
                           value={bookurl}
