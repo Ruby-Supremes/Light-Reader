@@ -16,10 +16,14 @@ export default function  HomeCardNew() {
 // console.log(data)
 
   return (
-    <div>
-    <HomeContainer
+    <div className='container'>
+      <div>
+      <HomeContainer
         books={books}
-    />
+    /> 
+      </div>
     </div>
   )
 }
+
+ 

@@ -26,16 +26,7 @@ function Reviews() {
     const [user_id, setUser_id] = useState('')
     const [book_id, setBook_id] = useState('')
   
-    // Get all data from api 
-    useEffect(() => {
-      axios
-        .get(url)
-        .then((res) => {
-          console.log(res.data);
-          setData(res.data);
-        })
-        .catch((err) => console.log(err));
-    }, []);
+  
 
 // Post Reviews 
   function postReview(e) {
