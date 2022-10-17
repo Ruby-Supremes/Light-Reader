@@ -69,6 +69,7 @@ function Login({onLogin}) {
             name="username"
             className="form-control"
             placeholder="Enter username"
+            required
           />
         </div>
         <div className="mb-3">
@@ -78,6 +79,7 @@ function Login({onLogin}) {
             name="password"
             className="form-control"
             placeholder="Enter password"
+            required
           />
         </div>
         <div className="mb-3">

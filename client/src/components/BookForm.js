@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
 
 // const quoteAPI = "http://localhost:9292/inspirations";
 
@@ -9,6 +9,7 @@ function BookForm({ addBook }) {
   const [bookurl, setBookurl] = useState("");
   const [genre_id, setGenre_id] = useState("");
 
+ 
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/books", {
@@ -23,6 +24,7 @@ function BookForm({ addBook }) {
         bookurl,
         genre_id,
       }),
+      
     })
       .then((r) => r.json())
       .then((newBook) => console.log(newBook));
@@ -32,6 +34,7 @@ function BookForm({ addBook }) {
     setDescription("");
     setBookurl("");
     setGenre_id("");
+    
   }
 
   return (
@@ -54,6 +57,7 @@ function BookForm({ addBook }) {
                           placeholder="Book Title"
                           value={title}
                           onChange={(e) => setTitle(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="form-group" style={{ margin: 5 }}>
@@ -62,6 +66,7 @@ function BookForm({ addBook }) {
                           placeholder="Coverpagebook"
                           value={coverpage}
                           onChange={(e) => setCoverpage(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="form-group" style={{ margin: 5 }}>
@@ -71,6 +76,7 @@ function BookForm({ addBook }) {
                           rows={6}
                           value={description}
                           onChange={(e) => setDescription(e.target.value)}
+                          required
                         ></textarea>
                       </div>
                       <div className="form-group" style={{ margin: 5 }}>
@@ -80,6 +86,7 @@ function BookForm({ addBook }) {
                           placeholder="book url"
                           value={bookurl}
                           onChange={(e) => setBookurl(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="form-group" style={{ margin: 5 }}>
@@ -89,6 +96,7 @@ function BookForm({ addBook }) {
                           placeholder="genre_id"
                           value={genre_id}
                           onChange={(e) => setGenre_id(e.target.value)}
+                          required
                         />
                       </div>
                     </div>
